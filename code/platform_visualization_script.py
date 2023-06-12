@@ -21,7 +21,6 @@ def plot_navigation(file_name, lon_col = 'Longitude', lat_col = 'Latitude', alt_
   crs = ccrs.PlateCarree()
 
 
-
   # Create the figure
   fig = plt.figure()
   ax = plt.axes(projection=crs)
@@ -63,7 +62,7 @@ def plot_navigation(file_name, lon_col = 'Longitude', lat_col = 'Latitude', alt_
   
   plt.show()
 
-f = '/content/drive/My Drive/Flight_Path/IMPACTS_MetNav_P3B_20200125_R1.ict'
+f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS_MetNav_P3B_20200125_R1.ict'
 plot_navigation(f, lon_col = 'Longitude', lat_col = 'Latitude', alt_col = 'GPS_Altitude',
                 alt_units = 'm', extent =[-80.7, -67.5, 36.5, 45.4], cmap='jet',
                 skip_rows =76)
