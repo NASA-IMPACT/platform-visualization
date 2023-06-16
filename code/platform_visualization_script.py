@@ -69,7 +69,9 @@ def plot_navigation(file_name, lon_col = 'Longitude', lat_col = 'Latitude', alt_
   
   plt.show() #displays the plot
 
-f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS_MetNav_P3B_20200125_R1.ict' #sets the file path to the data file
+#f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS_MetNav_P3B_20200125_R1.ict' #sets the file path to the data file
+f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/1IMPACTS_MetNav_P3B_20220225_R0.ict' #file from same platfrom and campagin but just different granule
+#f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/olympex_naver2_IWG1_20151215-2007.txt'
 plot_navigation(f, lon_col = 'Longitude', lat_col = 'Latitude', alt_col = 'GPS_Altitude', 
                 alt_units = 'm', extent =[-80.7, -67.5, 36.5, 45.4], cmap='jet',
                 skip_rows =76) #calls the plot_navigation function, specifying the parameters
