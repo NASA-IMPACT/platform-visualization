@@ -1,11 +1,11 @@
 
-import pandas as pd #imports pandas, a Python library for data analysis
-import geopandas as gpd #imports geopandas, a Python library for working with geospatial data
-import numpy as np #imports numpy, a Python library for working with arrays and matrices
-import matplotlib.pyplot as plt #imports matplotlib, a Python library for creating visualizations
-import cartopy.crs as ccrs #imports cartopy, a Python library for creating maps
-import cartopy.feature as cfeature #imports cartopy features, a Python library for adding features to maps
-from IPython.display import display #imports display, a Python library for displaying data
+import pandas as pd 
+import geopandas as gpd 
+import numpy as np 
+import matplotlib.pyplot as plt 
+import cartopy.crs as ccrs 
+import cartopy.feature as cfeature 
+from IPython.display import display 
 
 def plot_navigation(file_name, lon_col = 'Longitude', lat_col = 'Latitude', alt_col = 'Altitude',
                     alt_units = 'km', extent = [-125,-75,20,60], cmap='jet',skip_rows = 0, legend_orientation= 'horizontal'):
@@ -69,9 +69,9 @@ def plot_navigation(file_name, lon_col = 'Longitude', lat_col = 'Latitude', alt_
   
   plt.show() #displays the plot
 
-#f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS_MetNav_P3B_20200125_R1.ict' #sets the file path to the data file
-f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/1IMPACTS_MetNav_P3B_20220225_R0.ict' #file from same platfrom and campagin but just different granule
-#f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/olympex_naver2_IWG1_20151215-2007.txt'
+#f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/IMPACTS_MetNav_P3B_20200125_R1.ict' #sets the file path to the data file
+#f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/IMPACTS_MetNav_P3B_20220225_R0.ict' #file from same platfrom and campagin but just different granule
+#f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/olympex_naver2_IWG1_20151215-2007.txt
 plot_navigation(f, lon_col = 'Longitude', lat_col = 'Latitude', alt_col = 'GPS_Altitude', 
                 alt_units = 'm', extent =[-80.7, -67.5, 36.5, 45.4], cmap='jet',
                 skip_rows =76) #calls the plot_navigation function, specifying the parameters
