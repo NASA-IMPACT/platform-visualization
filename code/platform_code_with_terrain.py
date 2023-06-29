@@ -58,9 +58,15 @@ def plot_navigation_with_map(file_name, lon_col='Longitude', lat_col='Latitude',
     plt.show()
 
 
-f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/1IMPACTS_MetNav_P3B_20220225_R0.ict'
+#f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/1IMPACTS_MetNav_P3B_20220225_R0.ict' from impacts 
+f='/Users/anabellebrodsky/Desktop/NASA/ADMG/FIREX-AQ/DC-8/168FIREXAQ-METNAV5HZ_DC8_20190730_R1.ict' #from firex-aq
 map_image_path = '/Users/anabellebrodsky/Desktop/NASA/ADMG/blueMarble.png'
 
-plot_navigation_with_map(f, lon_col='Longitude', lat_col='Latitude', alt_col='GPS_Altitude',
-                         alt_units='m',extent = [-80.7, -67.5, 36.5, 45.4], cmap='jet',
+plot_navigation_with_map(f, lon_col='Longitude', lat_col='Latitude', alt_col='MSL_GPS_Altitude',
+                         alt_units='m',extent = [-125, -104, 40, 50], cmap='jet',
                          skip_rows=76, map_image_path=map_image_path)
+                         #to visualize east coat extent = [-80.7, -67.5, 36.5, 45.4]
+                        #to visualize california extent = [-124.5, -113.5, 32.5, 42]
+                        #to visualize lower midwest extent =[-125, -85, 25, 45]  
+                        #to have zoomed out view of upper midwest extent = [-130, -70, 25, 60]
+                        #to have more zoomed in view of upper midwest extent = [-125, -104, 40, 50]
