@@ -71,38 +71,18 @@ def plot_navigation(file_name, lon_col = 'Longitude', lat_col = 'Latitude', alt_
   
   plt.show() #displays the plot
 
-#ALL OF THE DATA GRAUNLES IN NUMERICAL ORDER
-#f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/0IMPACTS_MetNav_P3B_20200125_R1.ict' #sets the file path to the data file
-#f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/1IMPACTS_MetNav_P3B_20220225_R0.ict' #file from same platfrom and campagin but just different granule
-#f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/2IMPACTS_MetNav_P3B_20220219_R0.ict' 
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/3IMPACTS_MetNav_P3B_20220217_R0.ict'
-#f= '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/4IMPACTS_MetNav_P3B_20220213_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/5IMPACTS_MetNav_P3B_20220208_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/6IMPACTS_MetNav_P3B_20220204_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/7IMPACTS_MetNav_P3B_20220203_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/8IMPACTS_MetNav_P3B_20220129_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/9IMPACTS_MetNav_P3B_20220128_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/10IMPACTS_MetNav_P3B_20220119_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/11IMPACTS_MetNav_P3B_20220117_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/12IMPACTS_MetNav_P3B_20220114_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/13IMPACTS_MetNav_P3B_20220111_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/14IMPACTS_MetNav_P3B_20220106_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/15IMPACTS_MetNav_P3B_20200225_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/16IMPACTS_MetNav_P3B_20200224_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/17IMPACTS_MetNav_P3B_20200220_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/18IMPACTS_MetNav_P3B_20200218_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/19IMPACTS_MetNav_P3B_20200213_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/20IMPACTS_MetNav_P3B_20200207_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/21IMPACTS_MetNav_P3B_20200205_R0.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/22IMPACTS_MetNav_P3B_20200201_R0.ict'
-f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/23IMPACTS_MetNav_P3B_20200125_R1.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/24IMPACTS_MetNav_P3B_20200118_R1.ict'
-#f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/25IMPACTS_MetNav_P3B_20200112_R0.ict'
-plot_navigation(f, lon_col = 'Longitude', lat_col = 'Latitude', alt_col = 'GPS_Altitude', 
-                alt_units = 'm', extent =[-80.7, -67.5, 36.5, 45.4], cmap='jet',
-                skip_rows =76) #calls the plot_navigation function, specifying the parameters
+
+f='/Users/anabellebrodsky/Desktop/NASA/ADMG/FIREX-AQ/DC-8/226FIREXAQ-METNAV5HZ_DC8_20190715_R1.ict'
 
 
+plot_navigation(f, lon_col = 'Longitude', lat_col = 'Latitude', alt_col = 'MSL_GPS_Altitude', 
+                alt_units = 'm',extent = [-124.5, -113.5, 32.5, 42] ,cmap='jet',
+                skip_rows =75) #calls the plot_navigation function, specifying the parameters
+                #to visualize east coat extent = [-80.7, -67.5, 36.5, 45.4]
+                #to visualize california extent = [-124.5, -113.5, 32.5, 42]
+                #to visualize lower midwest extent =[-125, -85, 25, 45]  
+                #to have zoomed out view of upper midwest extent = [-130, -70, 25, 60]
+                #to have more zoomed in view of upper midwest extent = [-125, -104, 40, 50]
 
 #EXTRA FILES
 #f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/olympex_naver2_IWG1_20151215-2007.txt

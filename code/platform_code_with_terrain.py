@@ -61,7 +61,7 @@ def plot_navigation_with_map(file_name, lon_col='Longitude', lat_col='Latitude',
 #f = '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/P-3/1IMPACTS_MetNav_P3B_20220225_R0.ict' from impacts 
 f ='/Users/anabellebrodsky/Desktop/NASA/ADMG/FIREX-AQ/DC-8/168FIREXAQ-METNAV5HZ_DC8_20190730_R1.ict' #from firex-aq
 #f='/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/ER-2/2IMPACTS_MetNav_ER2_20220225_R0.ict' #from impacts - ER-2 aircraft
-map_image_path = '/Users/anabellebrodsky/Desktop/NASA/ADMG/blueMarble.png'
+map_image_path = '/Users/anabellebrodsky/Desktop/NASA/ADMG/platform-visualization/blueMarble.png'
 
 plot_navigation_with_map(f, lon_col='Longitude', lat_col='Latitude', alt_col='MSL_GPS_Altitude',
                          alt_units='m', extent = [-125, -104, 40, 50], cmap='jet',
