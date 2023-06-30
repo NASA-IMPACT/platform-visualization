@@ -46,19 +46,12 @@
 
 
 import matplotlib.pyplot as plt
-from PIL import Image
-import cartopy.crs as ccrs
 
-# Open image file
-img = Image.open("/Users/anabellebrodsky/Desktop/NASA/ADMG/blueMarble.png")
-
-projection = ccrs.PlateCarree()
-
-fig, ax = plt.subplots(figsize=(12, 9), subplot_kw={'projection': projection})
-
-# Display the image
-ax.imshow(img, origin='upper', transform=projection, extent=[-180, 180, -90, 90])
-
+# setup Lambert Conformal basemap.
+# set resolution=None to skip processing of boundary datasets.
+m = Basemap(width=12000000,height=9000000,projection='lcc',
+            resolution=None,lat_1=45.,lat_2=55,lat_0=50,lon_0=-107.)
+m.bluemarble()
 plt.show()
 
 
