@@ -345,13 +345,15 @@ df53 = pd.DataFrame({
 })
 
 
+
 df_list = [df1, df2, df3, df4, df5, df6, df7, df8, df9, df10, df11, df12, df13, df14, df15, df16, df17, df18, df19, df20, df21, df22, df23, df24, df25, df26, df27, df28, df29, df30, df31, df32, df33, df34, df35, df36, df37, df38, df39, df40, df41, df42, df43, df44, df45, df46, df47, df48, df49, df50, df51, df52, df53]
 
 
 map_image_path = '/Users/anabellebrodsky/Desktop/NASA/ADMG/platform-visualization/blueMarble.png'
 
-plot_single_point_map(df_list, 'lon', 'lat', extent = [-81, -66, 33, 46],
+plot_single_point_map(df_list, 'lon', 'lat', extent = [-81, -66, 33, 46], #LISTOS was mainly in east coast area
                          skip_rows=0, map_image_path=map_image_path)
+
                          #to visualize east coat extent = [-80.7, -67.5, 36.5, 45.4]
                         #to visualize california extent = [-124.5, -113.5, 32.5, 42]
                         #to visualize lower midwest extent =[-125, -85, 25, 45]  
