@@ -72,12 +72,12 @@ def plot_navigation(file_name, lon_col = 'Longitude', lat_col = 'Latitude', alt_
   plt.show() #displays the plot
 
 
-f='/Users/anabellebrodsky/Desktop/NASA/ADMG/FIREX-AQ/DC-8/226FIREXAQ-METNAV5HZ_DC8_20190715_R1.ict'
+f= '/Users/anabellebrodsky/Desktop/NASA/ADMG/IMPACTS/ER-2/1IMPACTS_MetNav_ER2_20220228_R0.ict'
 
 
-plot_navigation(f, lon_col = 'Longitude', lat_col = 'Latitude', alt_col = 'MSL_GPS_Altitude', 
-                alt_units = 'm',extent = [-124.5, -113.5, 32.5, 42] ,cmap='jet',
-                skip_rows =75) #calls the plot_navigation function, specifying the parameters
+plot_navigation(f, lon_col = 'Longitude', lat_col = 'Latitude', alt_col = 'GPS_Altitude', 
+                alt_units = 'm',extent = [-80.7, -67.5, 36.5, 45.4] ,cmap='jet',
+                skip_rows =56) #calls the plot_navigation function, specifying the parameters
                 #to visualize east coat extent = [-80.7, -67.5, 36.5, 45.4]
                 #to visualize california extent = [-124.5, -113.5, 32.5, 42]
                 #to visualize lower midwest extent =[-125, -85, 25, 45]  

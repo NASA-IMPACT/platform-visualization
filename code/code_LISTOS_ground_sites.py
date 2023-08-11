@@ -8,45 +8,46 @@ from PIL import Image
 from IPython.display import display 
 
 
-def plot_single_point_map(df_list, lon, lat, extent=[-125, -75, 20, 60], skip_rows=0, map_image_path=None):
+def plot_single_point_map(df_list, lon, lat, extent=[-125, -75, 20, 60], skip_rows=0, map_image_path=None): 
    
-
+    # Create the figure and axes with a Plate Carree projection
     fig, ax = plt.subplots(figsize=(12, 9), subplot_kw={'projection': ccrs.PlateCarree()})
 
     # Add background features
-    ax.add_feature(cfeature.LAND, edgecolor='black')
-    ax.add_feature(cfeature.STATES, edgecolor='black')
-    ax.add_feature(cfeature.OCEAN, alpha=0.8)
-    ax.add_feature(cfeature.COASTLINE)
-    ax.add_feature(cfeature.BORDERS, linestyle=':')
-    ax.add_feature(cfeature.LAKES, alpha=0.8)
-    ax.add_feature(cfeature.RIVERS)
+    ax.add_feature(cfeature.LAND, edgecolor='black') # Adds land to the map
+    ax.add_feature(cfeature.STATES, edgecolor='black') # Adds states to the map
+    ax.add_feature(cfeature.OCEAN, alpha=0.8) # Adds ocean to the map
+    ax.add_feature(cfeature.COASTLINE) # Adds coastline to the map
+    ax.add_feature(cfeature.BORDERS, linestyle=':') # Adds borders to the map
+    ax.add_feature(cfeature.LAKES, alpha=0.8) # Adds lakes to the map
+    ax.add_feature(cfeature.RIVERS) # Adds rivers to the map
 
     # Add and format gridlines. Remove top and right labels
     gl = ax.gridlines(crs=ccrs.PlateCarree(), draw_labels=True,
                       linewidth=1, color='gray', alpha=0.5, linestyle='--')
     gl.top_labels, gl.right_labels = False, False
-    gl.xlabel_style = {'size': 15}
-    gl.ylabel_style = {'size': 15}
+    gl.xlabel_style = {'size': 15} # Sets the font size of the x-axis labels
+    gl.ylabel_style = {'size': 15} # Sets the font size of the y-axis labels
 
     ax.set_extent(extent)  # Sets the extent of the plot to be the extent specified by the extent parameter
 
     # Open and display the map image
-    if map_image_path: 
-        img = Image.open(map_image_path)
-        ax.imshow(img, origin='upper', extent=[-180, 180, -90, 90], transform=ccrs.PlateCarree())
+    if map_image_path:  # If a map image path is specified, open the image and display it
+        img = Image.open(map_image_path) # Opens the image
+        ax.imshow(img, origin='upper', extent=[-180, 180, -90, 90], transform=ccrs.PlateCarree()) # Displays the image
 
 
-
+    # Plot the data on the map
+    #'ro' is red circles
     colors = ['ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro', 'ro','ro', 'ro', 'ro','ro'];
-    for df, color in zip(df_list, colors):
-        ax.scatter(df[lon], df[lat], facecolor = 'red', edgecolor = 'black')
+    for df, color in zip(df_list, colors):  # Plots the data
+        ax.scatter(df[lon], df[lat], facecolor = 'red', edgecolor = 'black') # Plots the data and creates a black edge around the red circles
 
-    plt.show()
+    plt.show() # Displays the map
 
-df1 = pd.DataFrame({
-    'lon': [-74.192892],
-    'lat': [40.720989]
+df1 = pd.DataFrame({ # Creates a DataFrame with the longitude and latitude of the point to plot
+    'lon': [-74.192892], # Longitude of the point
+    'lat': [40.720989] # Latitude of the point
 })
 
 df2 = pd.DataFrame({
@@ -345,11 +346,12 @@ df53 = pd.DataFrame({
 })
 
 
-
+#adds all the dataframes to a list
 df_list = [df1, df2, df3, df4, df5, df6, df7, df8, df9, df10, df11, df12, df13, df14, df15, df16, df17, df18, df19, df20, df21, df22, df23, df24, df25, df26, df27, df28, df29, df30, df31, df32, df33, df34, df35, df36, df37, df38, df39, df40, df41, df42, df43, df44, df45, df46, df47, df48, df49, df50, df51, df52, df53]
 
 
 map_image_path = '/Users/anabellebrodsky/Desktop/NASA/ADMG/platform-visualization/blueMarble.png'
+
 
 plot_single_point_map(df_list, 'lon', 'lat', extent = [-81, -66, 33, 46], #LISTOS was mainly in east coast area
                          skip_rows=0, map_image_path=map_image_path)
